@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ESG Analyzer</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            #companyBox {
+                width:100%;
+                height:20%;
+                background: yellow;
+            }
+            #numberBox {
+                width: 70%;
+                height: 80%; 
+                float: left;
+                background: green;
+            }
+            #chartBox {
+                width: 30%;
+                height: 80%;
+                float:right;
+                background: red
+            }
+            #aboutCompany {
+                width: 100%;
+                height: 30%;
+                background: lightblue;
+            }
+            #firstSection {
+                height: 50vh;
+            }
+            #navBar {
+                height: 10vh;
+                background: gray;
+                width: 100%;
+            }
+            .score {
+                display: inline;
+            }
+            .scoreBox {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="navBar">
+            <h1 style="color:aliceblue">Navigation bar</h1>
+        </div>
+        <div id="firstSection">
+            <div id="companyBox">
+                <span style="font-size: 3em">Company Name</span>
+            </div>
+            <div id="aboutCompany">
+                <p>About us Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        
+            <div id="numberBox">
+                <h1>ESG Scores</h1>
+                <div id="envScore" class="scoreBox">
+                    <span class="score"><h1 class="score">23/</h1><h8 class="score">100</h8></span>
+                </div>
+                <div id="workScore" class="scoreBox">
+                    <span class="score"><h1 class="score">23/</h1><h8 class="score">100</h8></span>
+                </div>
+                <div id="prodScore" class="scoreBox">
+                    <span class="score"><h1 class="score">23/</h1><h8 class="score">100</h8></span>
+                </div>
+                <div id="custScore" class="scoreBox">
+                    <span class="score"><h1 class="score">23/</h1><h8 class="score">100</h8></span>
+                </div>
+                <div id="leadScore" class="scoreBox">
+                    <span class="score"><h1 class="score">23/</h1><h8 class="score">100</h8></span>
+                </div>
+                <div id="commScore" class="scoreBox">
+                    <span class="score"><h1 class="score">23/</h1><h8 class="score">100</h8></span>
+                </div>
+            </div>
+            <div id="chartBox">Chart</div>
+        </div>
+    </body>
+
+</html>
