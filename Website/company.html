@@ -4,6 +4,9 @@
         <title>ESG Analyzer</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
+            * {
+                border: 1px solid black;
+            }
             #companyBox {
                 width:100%;
                 height:20%;
@@ -34,9 +37,15 @@
                 background: gray;
                 width: 100%;
             }
-            h1 .score {
-                display: inline;
-                font-size: 2em;
+            .score {
+                font-size: 4em;
+                text-align: right;
+            }
+            .scoreRange {
+                font-size: 1.1em;
+                text-align: left;
+                vertical-align: bottom;
+                padding-bottom: 20px;
             }
             .scoreBox {
                 display: inline-block;
@@ -46,7 +55,7 @@
             }
             #secondSection {
                 width: 100%;
-                height: 500px;
+                height: 600px;
                 background: orange;
             }
             #thirdSection {
@@ -66,6 +75,9 @@
                 display: flex;
                 flex-wrap: wrap;
             }
+            .tradingview-widget-container {
+                float: right;
+            }
         </style>
     </head>
     <body>
@@ -82,32 +94,30 @@
         
             <div id="numberBox">
                 <h1 style="display: block">ESG Scores</h1>
-                <div id="scoreEncompasser">
-                    <div id="envScore" class="scoreBox">
-                        <span class="scoreClass">Environmental</span>
-                        <span class="score"><h1 class="score">23</h1><h8 class="score">/100</h8></span>
-                    </div>
-                    <div id="workScore" class="scoreBox">
-                        <span class="scoreClass">Workers</span>
-                        <span class="score"><h1 class="score">23</h1><h8 class="score">/100</h8></span>
-                    </div>
-                    <div id="prodScore" class="scoreBox">
-                        <span class="scoreClass">Productivity</span>
-                        <span class="score"><h1 class="score">23</h1><h8 class="score">/100</h8></span>
-                    </div>
-                    <div id="custScore" class="scoreBox">
-                        <span class="scoreClass">Productivity</span>
-                        <span class="score"><h1 class="score">23</h1><h8 class="score">/100</h8></span>
-                    </div>
-                    <div id="leadScore" class="scoreBox">
-                        <span class="scoreClass">Leadership</span>
-                        <span class="score"><h1 class="score">23</h1><h8 class="score">/100</h8></span>
-                    </div>
-                    <div id="commScore" class="scoreBox">
-                        <span class="scoreClass">Community</span>
-                        <span class="score"><h1 class="score">23</h1><h8 class="score">/100</h8></span>
-                    </div>
-                </div>
+                <table width="100%">
+                        <tr style="text-align: center;">
+                            <th colspan="2">Environmental</th>
+                            <th colspan="2">Workers</th>
+                            <th colspan="2">Products</th>
+                            <th colspan="2">Customers</th>
+                            <th colspan="2">Leadership</th>
+                            <th colspan="2">Community</th>
+                        </tr>
+                        <tr>
+                            <td class="score" id="">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                        </tr>
+                    </table>
             </div>
 
             <div id="chartBox">
@@ -119,9 +129,43 @@
 
         <div id="secondSection">
             <h1>Financial Details</h1>
+
+
+
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div id="tradingview_0e191"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                    new TradingView.widget(
+                        {
+                        "width": 700,
+                        "height": 400,
+                        "symbol": "NASDAQ:AAPL",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "Light",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_0e191"
+                        }
+                    );
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+
+
+
+
+
+
         </div>
         <div id="thirdSection">
-            <h1></h1>
+            <h1>Similar Companies</h1>
         </div>
         <div id="footer">
             <h3 style="color: white">Footer</h3>
