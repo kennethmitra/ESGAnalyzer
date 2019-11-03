@@ -11,7 +11,7 @@ def get_altered_df (questionaire):
         size = size + 1
     
     df['WEIGHTED_SCORE'] = df[['COMM', 'CUST', 'ENV', 'JOBS', 'LEAD', 'PROD', 'WORKER']].mean(axis=1)
-    df = df.sort_values(['WEIGHTED_SCORE'], ascending = False)
+    df = df.sort(['WEIGHTED_SCORE'], ascending = False)
     
     df = df[['NAME', 'TICKER']].head(10)
     
