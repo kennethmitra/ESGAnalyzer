@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
             * {
-                border: 1px solid black;
+                /*border: 1px solid black;*/
             }
             #companyBox {
                 width:100%;
@@ -66,12 +66,12 @@
             }
             #secondSection {
                 width: 100%;
-                height: 600px;
+                height: 700px;
                 background: orange;
             }
             #thirdSection {
                 width: 100%;
-                height: 500px;
+                height: 10%;
                 background: silver;
             }
             #footer {
@@ -92,9 +92,9 @@
         </style>
     </head>
     <body>
-        <div id="navBar">
-            <h1 style="color:aliceblue">Navigation bar</h1>
-        </div>
+        <?php 
+            include("navbar.html");
+        ?>
         <div id="firstSection">
             <div id="companyBox">
                 <span style="font-size: 3em"><?php echo $companyName;?></span>
@@ -187,7 +187,7 @@
 
 
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container" style="width:60%; height:79.3%; float: right; background: lightblue">
+            <div class="tradingview-widget-container" style="width:60%; height:60vh; float: right; background: lightblue">
                 <div id="tradingview_0e191"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                 <script type="text/javascript">
@@ -275,6 +275,9 @@
             },
             });
         </script>
+        <?php 
+            include("navbarScript.html");
+        ?>
     </body>
 
 </html>
