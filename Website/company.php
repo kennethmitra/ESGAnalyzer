@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ESG Analyzer</title>
+        <title>ESG Analyzer5</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
             * {
@@ -25,7 +25,8 @@
             }
             #numberBox {
                 width: 70%;
-                height: 80%; 
+                height: 300px; 
+                margin:none;
                 float: left;
                 background: green;
             }
@@ -41,11 +42,11 @@
                 background: lightblue;
             }
             #firstSection {
-                height: 50vh;
+                height: auto;
+                display: block;
             }
             #navBar {
                 height: 10vh;
-                background: gray;
                 width: 100%;
             }
             .score {
@@ -66,7 +67,7 @@
             }
             #secondSection {
                 width: 100%;
-                height: 700px;
+                height: 500px;
                 background: orange;
             }
             #thirdSection {
@@ -85,9 +86,6 @@
             #scoreEncompasser {
                 display: flex;
                 flex-wrap: wrap;
-            }
-            .tradingview-widget-container {
-                
             }
         </style>
     </head>
@@ -111,7 +109,6 @@
                         ?>
                     </p>
             </div>
-        
             <?php
                 $esgData = exec("python3 getESGStats.py " . $companyName);
                 $esgDataArray = explode(",", $esgData);
@@ -141,7 +138,7 @@
 
             <div id="numberBox">
                 <h1 style="display: block">ESG Scores</h1>
-                <table width="100%">
+                <table style="margin-top: 50px;" width="100%">
                         <tr style="text-align: center;">
                             <th colspan="2">Environmental</th>
                             <th colspan="2">Workers</th>
@@ -175,8 +172,6 @@
             </div>
         </div>
 
-        <hr style="border-color: blue; border-width:10px">
-
         <div id="secondSection">
             <h1>Financial Details</h1>
             <div id="financialDetails" style="width: 40%; height: auto; float: left; background: lightcoral">
@@ -185,8 +180,8 @@
                 </p>
             </div>
 
-
             <!-- TradingView Widget BEGIN -->
+            <!--
             <div class="tradingview-widget-container" style="width:60%; height:60vh; float: right; background: lightblue">
                 <div id="tradingview_0e191"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
@@ -194,7 +189,7 @@
                     new TradingView.widget(
                         {
                         "width": Math.round(screen.width * 0.6),
-                        "height": 465,
+                        "height": Math.round(screen.height * 0.6),
                         "symbol": "<?php echo $companyTicker ?>",
                         "interval": "D",
                         "timezone": "Etc/UTC",
@@ -209,7 +204,9 @@
                     );
                 </script>
             </div>
+                -->
             <!-- TradingView Widget END -->
+            <!--
         </div>
         <div id="thirdSection" style="width: 100%;">
             <h1>Similar Companies</h1>
@@ -217,7 +214,7 @@
         <div id="footer">
             <h3 style="color: white">Footer</h3>
         </div>
-        
+                -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
