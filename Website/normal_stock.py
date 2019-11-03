@@ -1,5 +1,5 @@
 import pandas as pd
-import sys 
+import sys
 
 companyName = sys.argv[1]
 
