@@ -7,7 +7,7 @@ $lead = $_POST['lead'];
 $comm = $_POST['comm'];
 $jobs = $_POST['jobs'];
 
-$recCompsStr = exec("python3 questionaire.py " . $env.",".$work.",".$prod.",".$cust.",".$lead.",".$comm.",".$jobs);
+$recCompsStr = exec("python3 questionaire.py " . $comm.",".$cust.",".$env.",".$jobs.",".$lead.",".$prod.",".$work);
 $recCompsArr = explode("/",$recCompsStr);
 $recComp1 = explode(",",$recCompsArr[0]);
 $recComp2 = explode(",",$recCompsArr[1]);
