@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ESG Analyzer</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            * {
+                border: 1px solid black;
+            }
+            #companyBox {
+                width:100%;
+                height:20%;
+                background: yellow;
+            }
+            #numberBox {
+                width: 70%;
+                height: 80%; 
+                float: left;
+                background: green;
+            }
+            #chartBox {
+                width: 30%;
+                height: 80%;
+                float:right;
+                background: rgb(255, 255, 255);
+            }
+            #aboutCompany {
+                width: 100%;
+                height: 30%;
+                background: lightblue;
+            }
+            #firstSection {
+                height: 50vh;
+            }
+            #navBar {
+                height: 10vh;
+                background: gray;
+                width: 100%;
+            }
+            .score {
+                font-size: 4em;
+                text-align: right;
+            }
+            .scoreRange {
+                font-size: 1.1em;
+                text-align: left;
+                vertical-align: bottom;
+                padding-bottom: 20px;
+            }
+            .scoreBox {
+                display: inline-block;
+                margin-left: 3%;
+                margin-right: 3%;
+                width: auto;
+            }
+            #secondSection {
+                width: 100%;
+                height: 600px;
+                background: orange;
+            }
+            #thirdSection {
+                width: 100%;
+                height: 500px;
+                background: silver;
+            }
+            #footer {
+                width: 100%;
+                height: 10vh;
+                background: black; 
+            }
+            .scoreClass {
+                display: inline-block;
+            }
+            #scoreEncompasser {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .tradingview-widget-container {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="navBar">
+            <h1 style="color:aliceblue">Navigation bar</h1>
+        </div>
+        <div id="firstSection">
+            <div id="companyBox">
+                <span style="font-size: 3em">Company Name</span>
+            </div>
+            <div id="aboutCompany">
+                <h1>About us</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        
+            <div id="numberBox">
+                <h1 style="display: block">ESG Scores</h1>
+                <table width="100%">
+                        <tr style="text-align: center;">
+                            <th colspan="2">Environmental</th>
+                            <th colspan="2">Workers</th>
+                            <th colspan="2">Products</th>
+                            <th colspan="2">Customers</th>
+                            <th colspan="2">Leadership</th>
+                            <th colspan="2">Community</th>
+                        </tr>
+                        <tr>
+                            <td class="score" id="">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                            <td class="score">23</td>
+                            <td class="scoreRange">/100</td>
+                        </tr>
+                    </table>
+            </div>
+
+            <div id="chartBox">
+                <canvas id="radarChart"></canvas>
+            </div>
+        </div>
+
+        <hr style="border-color: blue; border-width:10px">
+
+        <div id="secondSection">
+            <h1>Financial Details</h1>
+
+
+
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div id="tradingview_0e191"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                    new TradingView.widget(
+                        {
+                        "width": 700,
+                        "height": 400,
+                        "symbol": "NASDAQ:AAPL",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "Light",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_0e191"
+                        }
+                    );
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+
+
+
+
+
+
+        </div>
+        <div id="thirdSection">
+            <h1>Similar Companies</h1>
+        </div>
+        <div id="footer">
+            <h3 style="color: white">Footer</h3>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+            var ctxR = document.getElementById("radarChart").getContext('2d');
+            var myRadarChart = new Chart(ctxR, {
+            type: 'radar',
+            data: {
+            labels: ["Workers", "Products", "Customers", "Leadership", "Communities", "Environment"],
+            datasets: [{
+            label: "Insert Company Here",
+            data: [65, 59, 90, 81, 56, 55],
+            backgroundColor: [
+            'rgba(105, 0, 132, .2)',
+            ],
+            borderColor: [
+            'rgba(200, 99, 132, .7)',
+            ],
+            borderWidth: 2
+            },
+            {
+            label: "Industry Average",
+            data: [28, 48, 40, 19, 96, 27],
+            backgroundColor: [
+            'rgba(0, 250, 220, .2)',
+            ],
+            borderColor: [
+            'rgba(0, 213, 132, .7)',
+            ],
+            borderWidth: 2
+            }
+            ]
+            },
+            options: {
+            responsive: true
+            }
+            });
+        </script>
+    </body>
+
+</html>
