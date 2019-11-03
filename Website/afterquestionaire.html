@@ -3,6 +3,27 @@
         <title>ESG Analyzer</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
+            #module {
+  width: 500px;
+}
+
+#module #collapseExample.collapse:not(.show) {
+  display: block;
+  height: 3rem;
+  overflow: hidden;
+}
+
+#module #collapseExample.collapsing {
+  height: 3rem;
+}
+
+#module a.collapsed:after  {
+    content: '+ Show More';
+}
+
+#module a:not(.collapsed):after {
+    content: '- Show Less';
+}
         body {
         
         background: linear-gradient(270deg, #0be40d, #12beac);
@@ -35,8 +56,8 @@
             <div id = "module"  class="container">
                 <h1 class="display-4">Companies That Could Interest You</h1>
                 <p class="collapse" id="collapseExample" aria-expanded="false">
-                        Bacon ipsum dolor amet doner picanha tri-tip biltong leberkas salami meatball tongue filet mignon landjaeger tail. Kielbasa salami tenderloin picanha spare ribs, beef ribs strip steak jerky cow. Pork chop chicken ham hock beef ribs turkey jerky. Shoulder beef capicola doner, tongue tail sausage short ribs andouille. Rump frankfurter landjaeger t-bone, kielbasa doner ham hock shankle venison. Cupim capicola kielbasa t-bone, ball tip chicken andouille venison pork chop doner bacon beef ribs kevin shankle. Short loin leberkas tenderloin ground round shank, brisket strip steak ham hock ham.
-                    </p>
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse congue risus eu sapien tempus consequat. Fusce in sollicitudin arcu. Aliquam gravida porttitor erat sit amet varius. Vivamus posuere eros et neque ultrices pellentesque. Quisque metus sem, gravida sed ipsum eu, molestie porta nibh. Aliquam sit amet ultrices magna, eu vestibulum neque. Sed aliquam turpis vitae nisl tristique, ac sagittis mi condimentum. Nunc sollicitudin, ante vel rhoncus porta, erat diam rhoncus lorem, eget porttitor purus velit quis est. Etiam et mauris accumsan metus pretium cursus.
+Phasellus hendrerit magna non magna porta, vel malesuada neque blandit. Ut molestie risus et augue tincidunt posuere. Ut fermentum euismod nulla non sagittis. Morbi tempus convallis sodales. Nullam at elementum purus. Fusce aliquam lorem neque, sed vestibulum ante mollis vel. Maecenas sed nibh ipsum. Suspendisse potenti. Duis tempus tincidunt sodales. Nullam eu euismod ex, in sollicitudin nibh. Aenean auctor orci vel dolor euismod, vel placerat felis convallis. Phasellus vulputate orci lacus, non auctor est vehicula in. Nunc bibendum, leo vitae aliquam mattis, risus metus porta neque, non ullamcorper odio velit sit amet nunc. Duis scelerisque nisl non urna dictum ultricies. Proin a viverra augue. Donec augue libero, luctus eu risus sed, pretium commodo lectus.</p>
                     <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     </a>
                 <p class="lead">Here are a few companies that you may want to invest in</p>
