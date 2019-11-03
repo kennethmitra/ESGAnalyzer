@@ -1,10 +1,6 @@
-from iexfinance.stocks import get_historical_data
-from datetime import datetime
-from tokens import *
-from dateutil.relativedelta import relativedelta
 import pandas as pd
 
-companyName = sys.argv[1]
+companyName = 'AAPL'
 
 def calc_percent(a, b):
     return (a - b)/a * 100
