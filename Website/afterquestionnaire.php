@@ -51,8 +51,7 @@ $recComp6 = explode(",",$recCompsArr[5]);
             }
             body {
             
-              background: linear-gradient(270deg, #0be40d, #12beac);
-              background-size: 400% 400%;
+              <?php include("gradient.php") ?>
 
               -webkit-animation: AnimationName 30s ease infinite;
               -moz-animation: AnimationName 30s ease infinite;
