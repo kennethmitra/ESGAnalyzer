@@ -41,3 +41,21 @@
 Phasellus hendrerit magna non magna porta, vel malesuada neque blandit. Ut molestie risus et augue tincidunt posuere. Ut fermentum euismod nulla non sagittis. Morbi tempus convallis sodales. Nullam at elementum purus. Fusce aliquam lorem neque, sed vestibulum ante mollis vel. Maecenas sed nibh ipsum. Suspendisse potenti. Duis tempus tincidunt sodales. Nullam eu euismod ex, in sollicitudin nibh. Aenean auctor orci vel dolor euismod, vel placerat felis convallis. Phasellus vulputate orci lacus, non auctor est vehicula in. Nunc bibendum, leo vitae aliquam mattis, risus metus porta neque, non ullamcorper odio velit sit amet nunc. Duis scelerisque nisl non urna dictum ultricies. Proin a viverra augue. Donec augue libero, luctus eu risus sed, pretium commodo lectus.</p>
         <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         </a>
+
+        #module #collapseExample.collapse:not(.show) {
+            display: block;
+            height: 3rem;
+            overflow: hidden;
+          }
+          
+          #module #collapseExample.collapsing {
+            height: 3rem;
+          }
+          
+          #module a.collapsed:after  {
+              content: '+ Show More';
+          }
+          
+          #module a:not(.collapsed):after {
+              content: '- Show Less';
+          }
