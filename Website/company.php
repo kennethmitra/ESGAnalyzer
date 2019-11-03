@@ -9,7 +9,7 @@
     $companyName = $companyInfo[0];
     $companyTicker = $companyInfo[1];
 ?>
-<?php echo $companyTicker ?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0051)https://getbootstrap.com/docs/4.3/examples/product/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Product example · Bootstrap</title>
+    <title>IntelliVest | <?php echo $companyTicker ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/product/">
 
@@ -170,6 +170,7 @@
     <?php 
       include("navbar.html");
     ?>
+    
 <div id="module">
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-9 p-lg-1 mx-auto my-5">
@@ -185,12 +186,11 @@
     </div>
   </div>
 </div>
-<?php echo $companyTicker ?>
 <?php
       $esgData = exec("python3 getESGStats.py " . $companyName);
       $esgDataArray = explode(",", $esgData);
       $companyName = $esgDataArray[0];
-      $companyTicker = $esgDataArray[1];
+      //$companyTicker = $esgDataArray[1];
       $companySector = $esgDataArray[2];
       $companyWEIGHTED_SCORE = $esgDataArray[3];
       $companyRANK = $esgDataArray[4];
@@ -254,7 +254,7 @@
     </div>
     
   </div>
-
+  
   <div id="box2" class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div id="chartBox" class="chart-container" style="position: relative; height:80vh; width:50vw">
       <canvas id="radarChart"></canvas>
@@ -271,7 +271,7 @@
     <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
   </div>
   <div id="box4" class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <?php echo $companyTicker ?>
+  
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container" style="background: lightblue">
             <div id="tradingview_0e191"></div>

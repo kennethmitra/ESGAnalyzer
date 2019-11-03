@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>IntelliVest | Search</title>
+        <title>IntelliVest | Scan</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
             #searchDiv {
                 width: 80%;
                 height: 50%;
                 margin: auto;
-                margin-top: 10%;
+                margin-top:10%;
             }
             #searchBox {
                 border: 1px solid gray;
@@ -17,7 +17,6 @@
             #search {
                 height: 10%;
                 width: 100%;
-                margin-top: 10%; 
             }
             #navBar {
                 height: 10vh;
@@ -31,11 +30,12 @@
                 background: lightgray;
             }
             body {
+            
                 <?php include("gradient.php") ?>
 
-            -webkit-animation: AnimationName 10s ease infinite;
-            -moz-animation: AnimationName 10s ease infinite;
-            animation: AnimationName 10s ease infinite;
+            -webkit-animation: AnimationName 30s ease infinite;
+            -moz-animation: AnimationName 30s ease infinite;
+            animation: AnimationName 30s ease infinite;
 
             @-webkit-keyframes AnimationName {
                 0%{background-position:0% 50%}
@@ -59,37 +59,19 @@
         <?php 
             include("navbar.html");
         ?>
-        <div class="heading">
-            <h1 style="font-size: 10em; text-align: center">IntelliVest</h1>
-            <!--<p style="text-align:center;">Informed Investing</p>-->
-        </div>
         <div class="container" id="search">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3">Company Name</span>
-                </div>
-                <input id="searchBox" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="Enter a Stock Symbol or Company Name">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" onclick="processInput()">Search</button>
-                </div>
+            <h1 style="text-align:center">Search by Barcode</h1>
+            <div style="border-radius: 30px; border: 1px solid black; background:gray;width:400px;height:600px;margin-left:auto;margin-right:auto">
+                <img style="width:80%;height:auto;margin-left:10%;margin-top:5%;margin-bottom:5%" src="https://barcode-labels.com/wp-content/uploads/2019/04/UPC-Bin-14-small-202x300.jpg" />
+                <a href="/company.php?company=Target"> 
+                    <div style="border-radius: 2; border: 1px solid black; background:black;width:350px;height:50px;margin-left:auto;margin-right:auto">
+                        <p style="vertical-align:middle;text-align:center;color:white">Take Picture</p>
+                    </div>
+                </a>
             </div>
-            <p style="text-align:center">Search for a company or <a href="/questionnaire.php">find your match</a>.</p>
+            <p style="text-align:center">Coming soon... Scan a barcode to get details on the company who made the product!</a>.</p>
         </div>
-        <script>
-            function processInput() {
-                var input = document.getElementById("searchBox").value;
-                window.location.href = "/company.php?company=" + input;
-            }
-            document.getElementById("searchBox").addEventListener("keyup", function(event) {
-                // Number 13 is the "Enter" key on the keyboard
-                if (event.keyCode === 13) {
-                    // Cancel the default action, if needed
-                    event.preventDefault();
-                    // Trigger the button element with a click
-                    processInput();
-                }
-            });
-        </script>
+
         <?php 
             include("navbarScript.html");
         ?>
