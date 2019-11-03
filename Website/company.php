@@ -164,6 +164,17 @@
                 100%{background-position:0% 50%}
             }
           }
+          .finStatHead {
+            text-align: left;
+            font-size: 2.5em;
+          }
+          .finStatVal {
+            text-align: left;
+            font-size: 2.3em;
+          }
+          #finDataBox {
+            text-align:left;
+          }
     </style>
   </head>
   <body>
@@ -226,15 +237,15 @@
           </div>
           <h4 class="small font-weight-bold">Products <span class="float-right"><?php echo $companyProd ?></span></h4>
           <div class="progress mb-4">
-            <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $companyProd ?>%" aria-valuenow="<?php echo $companyCust ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $companyProd ?>%" aria-valuenow="<?php echo $companyCust ?>" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <h4 class="small font-weight-bold">Environment <span class="float-right"><?php echo $companyEnv ?></span></h4>
           <div class="progress mb-4">
-            <div class="progress-bar" role="progressbar" style="width: <?php echo $companyEnv ?>%" aria-valuenow="<?php echo $companyEnv ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $companyEnv ?>%" aria-valuenow="<?php echo $companyEnv ?>" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <h4 class="small font-weight-bold">Jobs <span class="float-right"><?php echo $companyJobs ?></span></h4>
           <div class="progress mb-4">
-            <div class="progress-bar" role="progressbar" style="width: <?php echo $companyJobs ?>%" aria-valuenow="<?php echo $companyJobs ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $companyJobs ?>%" aria-valuenow="<?php echo $companyJobs ?>" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <h4 class="small font-weight-bold">Communities<span class="float-right"><?php echo $companyComm ?></span></h4>
           <div class="progress">
@@ -246,7 +257,7 @@
           </div>
           <h4 class="small font-weight-bold">Workers<span class="float-right"><?php echo $companyWork ?></span></h4>
           <div class="progress mb-4">
-            <div class="progress-bar bg-danger" role="progressbar" style="width: <?php echo $companyWork ?>%" aria-valuenow="<?php echo $companyWork ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $companyWork ?>%" aria-valuenow="<?php echo $companyWork ?>" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
       </div>
@@ -265,10 +276,19 @@
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
+      <h2 class="display-5">Financial Statistics</h2>
+      <?php 
+        $finStr = exec("python3 normal_stock.py ".$companyTicker);
+        $finArr = explode(",",$finStr);
+      ?>
+      <div id="finDataBox">
+        <p><span class="finStatHead">Price: </span><span class="finStatVal">$<?php echo $finArr[1]?></span></p>
+        <p><span class="finStatHead">Daily Change: </span><span class="finStatVal">$<?php echo $finArr[2] ?> (<?php echo $finArr[5]?>%)</span></p>
+        <p><span class="finStatHead">Volume: </span><span class="finStatVal"><?php echo $finArr[3]?></span></p>
+        <p><span class="finStatHead">Mkt. Cap: </span><span class="finStatVal">$<?php echo $finArr[4]?></span></p>
+      </div>
     </div>
-    <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    
   </div>
   <div id="box4" class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
   
@@ -303,7 +323,7 @@
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
       <h2 class="display-5">Similar Companies</h2>
-      <p class="lead">Companies with similar stuff</p>
+      <p class="lead">Companies in the same industry with high overall scores</p>
 
       <?php 
         $similarAllArr = exec("python3 get_similar.py ".$companyTicker);
