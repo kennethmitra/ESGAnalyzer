@@ -3,7 +3,7 @@ import sys
 import random
 
 df = pd.read_csv("data.csv")
-print(sys.argv)
+#print(sys.argv)
 companyName = sys.argv[1]
 
 try:
