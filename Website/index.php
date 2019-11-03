@@ -23,17 +23,19 @@
                 height: 10vh;
                 width: 100%;
             }
+            .nav-item :hover{
+                border: 1px solid rgba(47, 232, 252, 0.99);
+                border-radius:5px;
+            }
             .btn {
                 background: lightgray;
             }
             body {
-            
-            background: linear-gradient(270deg, #0be40d, #12beac);
-            background-size: 400% 400%;
+                <?php include("gradient.php") ?>
 
-            -webkit-animation: AnimationName 30s ease infinite;
-            -moz-animation: AnimationName 30s ease infinite;
-            animation: AnimationName 30s ease infinite;
+            -webkit-animation: AnimationName 10s ease infinite;
+            -moz-animation: AnimationName 10s ease infinite;
+            animation: AnimationName 10s ease infinite;
 
             @-webkit-keyframes AnimationName {
                 0%{background-position:0% 50%}
@@ -59,17 +61,19 @@
         ?>
         <div class="heading">
             <h1 style="font-size: 10em; text-align: center">IntelliVest</h1>
+            <!--<p style="text-align:center;">Informed Investing</p>-->
         </div>
         <div class="container" id="search">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon3">Company Name</span>
                 </div>
-                <input id="searchBox" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <input id="searchBox" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="Enter a Stock Symbol or Company Name">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" onclick="processInput()">Search</button>
                 </div>
             </div>
+            <p style="text-align:center">Search for a company or <a href="/questionnaire.php">find your match</a>.</p>
         </div>
         <script>
             function processInput() {

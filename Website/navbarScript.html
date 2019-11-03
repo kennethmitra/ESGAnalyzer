@@ -1,7 +1,6 @@
 <script>
         function processNavInput() {
             var inputNav = document.getElementById("navSearch").value;
-            alert("/company.php?company=" + inputNav);
             window.location.href = ("/company.php?company=" + inputNav);
         }
         document.getElementById("navSearch").addEventListener("keyup", function(event) {

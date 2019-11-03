@@ -9,6 +9,7 @@
     $companyName = $companyInfo[0];
     $companyTicker = $companyInfo[1];
 ?>
+<?php echo $companyTicker ?>
 <!DOCTYPE html>
 <!-- saved from url=(0051)https://getbootstrap.com/docs/4.3/examples/product/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -141,8 +142,7 @@
 
       body {
             
-            background: linear-gradient(270deg, #0be40d, #12beac);
-            background-size: 400% 400%;
+        <?php include("gradient.php") ?>
 
             -webkit-animation: AnimationName 30s ease infinite;
             -moz-animation: AnimationName 30s ease infinite;
@@ -185,7 +185,7 @@
     </div>
   </div>
 </div>
-
+<?php echo $companyTicker ?>
 <?php
       $esgData = exec("python3 getESGStats.py " . $companyName);
       $esgDataArray = explode(",", $esgData);
@@ -271,6 +271,7 @@
     <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
   </div>
   <div id="box4" class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <?php echo $companyTicker ?>
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container" style="background: lightblue">
             <div id="tradingview_0e191"></div>
