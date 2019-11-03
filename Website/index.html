@@ -11,18 +11,42 @@
                 margin-top: 10%;
             }
             #searchBox {
-                /*border-radius: 10%;*/
+                border: 1px solid gray;
+                background: rgba(255, 254, 254, 0.863);
+            }
+            body {
+                background: rgba(234, 255, 248, 0.966);
+            }
+            #search {
+                height: 10%;
+                width: 100%;
+                margin-top: 10%;
+            }
+            #navBar {
+                height: 10vh;
+                background: gray;
+                width: 100%;
+            }
+            .btn {
+                background: lightgray;
             }
         </style>
     </head>
     <body>
-        <div class="jumbotron jumbotron-fluid" id="searchDiv">
-            <div class="container">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon3">Company Name</span>
-                    </div>
-                    <input id="searchBox" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        <div id="navBar">
+                <h1 style="color:aliceblue">Navigation bar</h1>
+        </div>
+        <div class="heading">
+            <h1 style="font-size: 10em; text-align: center">[Company Name]</h1>
+        </div>
+        <div class="container" id="search">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">Company Name</span>
+                </div>
+                <input id="searchBox" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Search</button>
                 </div>
             </div>
         </div>
