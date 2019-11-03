@@ -20,11 +20,10 @@
             #search {
                 height: 10%;
                 width: 100%;
-                margin-top: 10%;
+                margin-top: 10%; 
             }
             #navBar {
                 height: 10vh;
-                background: gray;
                 width: 100%;
             }
             .btn {
