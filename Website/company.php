@@ -323,7 +323,7 @@
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
       <h2 class="display-5">Similar Companies</h2>
-      <p class="lead">Companies with similar stuff</p>
+      <p class="lead">Companies in the same industry with high overall scores</p>
 
       <?php 
         $similarAllArr = exec("python3 get_similar.py ".$companyTicker);
