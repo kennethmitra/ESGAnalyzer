@@ -25,9 +25,9 @@
         </style>
     </head>
     <body>
-        <div id="navBar">
-            <h1 style="color:aliceblue">Navigation bar</h1>
-        </div>
+        <?php 
+            include("navbar.html");
+        ?>
         
         <div id="questionnaire">
             <h1>Questionnaire</h1>
@@ -60,7 +60,9 @@
             <h3 style="color: white">Footer</h3>
         </div>
         
-
+        <?php 
+            include("navbarScript.html");
+        ?>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
