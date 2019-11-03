@@ -5,7 +5,7 @@ import random
 df = pd.read_csv("data.csv")
 df2 = pd.read_csv('industrydata.csv')
 #print(sys.argv)
-# companyName = sys.argv[1]
+companyName = sys.argv[1]
 companyName = 'GS'
 try:
     matchingCompanies = df.loc[(df['NAME'] == companyName) | (df['TICKER'] == companyName)]
