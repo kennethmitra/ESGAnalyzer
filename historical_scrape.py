@@ -27,6 +27,7 @@ for i in l:
     arr.append(f.iloc[0]['close'])
 
 s = ['oneYearGrowth', 'threeYearGrowth', 'fiveYearGrowth']
+
 for i in range(1, 4):
     ret = calc_percent(arr[0], arr[i])
     df_now[s[i - 1]] = ret
