@@ -4,7 +4,7 @@ import sys
 df = pd.read_csv("data.csv")
 df2 = pd.read_csv('industrydata.csv')
 
-companyName = 'AAPL'
+companyName = sys.argv[1]
 
 matchingCompanies = df.loc[(df['NAME'] == companyName) | (df['TICKER'] == companyName)]
 industry = matchingCompanies.iloc[0]['JUST_IND']
@@ -13,5 +13,5 @@ matchingIndustry = matchingIndustry.drop(matchingIndustry[(matchingIndustry['NAM
 matchingIndustry = matchingIndustry[['NAME', 'TICKER', 'WEIGHTED_SCORE']].head(3)
 
 for index, row in matchingIndustry.iterrows():
-    print(row['NAME'], row['TICKER'], row['WEIGHTED_SCORE'], sep = ',', end = ',')
+    print(row['NAME'], row['TICKER'], row['WEIGHTED_SCORE'], sep = ',', end = '/')
 

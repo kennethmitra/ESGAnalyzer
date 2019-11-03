@@ -244,48 +244,80 @@
     </div>
     <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
   </div>
-  <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <div class="my-3 py-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
-    </div>
-    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  <div id="box4" class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" style="background: lightblue">
+            <div id="tradingview_0e191"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.widget(
+                    {
+                    "width": Math.round(screen.width * 0.4),
+                    "height": Math.round(screen.height * 0.5),
+                    "symbol": "<?php echo $companyTicker ?>",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "Light",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_0e191"
+                    }
+                );
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
   </div>
 </div>
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
+      <h2 class="display-5">Similar Companies</h2>
+      <p class="lead">Companies with similar stuff</p>
+
+      <?php 
+        $similarAllArr = exec("python3 get_similar.py ".$companyTicker);
+        $threeCompanyStrs = explode("/",$similarAllArr);
+        $companyOne = explode(",",$threeCompanyStrs[0]);
+        $companyTwo = explode(",",$threeCompanyStrs[1]);
+        $companyThree = explode(",",$threeCompanyStrs[2]);
+      ?>
+
+      <div style="width:1000px; margin:0 auto;">
+              <div class="card" style="width: 18rem; display: inline-block">
+                  <div class="card-body">
+                      <h5 class="card-title"><?php echo $companyOne[0]?></h5>
+                      <p class="card-text"><?php echo $companyOne[1] ?></p>
+                      <p class="card-text"><?php echo $companyOne[2] ?></p>
+                      <a href="/company.php?company=<?php echo $companyOne[1]?>" class="btn btn-primary">Explore</a>
+                  </div>
+              </div>
+              <div class="card" style="width: 18rem; display: inline-block">
+                  <div class="card-body">
+                      <h5 class="card-title"><?php echo $companyTwo[0]?></h5>
+                      <p class="card-text"><?php echo $companyTwo[1] ?></p>
+                      <p class="card-text"><?php echo $companyTwo[2] ?></p>
+                      <a href="/company.php?company=<?php echo $companyTwo[1]?>" class="btn btn-primary">Explore</a>
+                  </div>
+              </div>
+              <div class="card" style="width: 18rem; display: inline-block">
+                  <div class="card-body">
+                      <h5 class="card-title"><?php echo $companyThree[0]?></h5>
+                      <p class="card-text"><?php echo $companyThree[1] ?></p>
+                      <p class="card-text"><?php echo $companyThree[2] ?></p>
+                      <a href="/company.php?company=<?php echo $companyThree[1]?>" class="btn btn-primary">Explore</a>
+                  </div>
+              </div>
+              </div> 
+            </div>
+
     </div>
-    <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-  </div>
-  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <div class="my-3 py-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
-    </div>
-    <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
   </div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <div class="my-3 p-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
-    </div>
-    <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-  </div>
-  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <div class="my-3 py-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
-    </div>
-    <div class="bg-white shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-  </div>
-</div>
 
 <footer class="container py-5">
   <div class="row">
