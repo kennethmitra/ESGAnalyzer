@@ -3,10 +3,11 @@
     $companyTicker = "MSFT";
     if(isset($_GET['company'])){
         $companyName = $_GET['company'];
-        //echo "<h1>ISSET</h1>";
-    } else {
-        //echo "<h1>ISNOTSET</h1>";
     }
+    $companyInfoStr = exec("python3 getOther.py ".$companyName);
+    $companyInfo = explode(",", $companyInfoStr);
+    $companyName = $companyInfo[0];
+    $companyTicker = $companyInfo[1];
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +37,7 @@
             }
             #aboutCompany {
                 width: 100%;
-                height: 30%;
+                height: auto;
                 background: lightblue;
             }
             #firstSection {
@@ -102,8 +103,11 @@
                 <h1>About <?php echo $companyName ?></h1>
                     <p>
                         <?php 
-                            $aboutUs = exec("python3 get_about.py " . $companyName); 
-                            echo $aboutUs;
+                            $outArr = array();
+                            exec("python3 get_about.py " . $companyName, $outArr); 
+                            foreach($outArr as $line) {
+                                echo($line);
+                            }
                         ?>
                     </p>
             </div>
@@ -123,6 +127,15 @@
                 $companyLead = round($esgDataArray[9]);
                 $companyComm = round($esgDataArray[10]);
                 $companyJobs = round($esgDataArray[11]);
+                $industryWEIGHTED_SCORE = $esgDataArray[12];
+                $industryRANK = $esgDataArray[13];
+                $industryEnv = round($esgDataArray[14]);
+                $industryWork = round($esgDataArray[15]);
+                $industryProd = round($esgDataArray[16]);
+                $industryCust = round($esgDataArray[17]);
+                $industryLead = round($esgDataArray[18]);
+                $industryComm = round($esgDataArray[19]);
+                $industryJobs = round($esgDataArray[20]);
             ?>
 
 
@@ -176,14 +189,13 @@
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container" style="width:60%; height:79.3%; float: right; background: lightblue">
                 <div id="tradingview_0e191"></div>
-                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                 <script type="text/javascript">
                     new TradingView.widget(
                         {
                         "width": Math.round(screen.width * 0.6),
                         "height": 465,
-                        "symbol": "NASDAQ:AAPL",
+                        "symbol": "<?php echo $companyTicker ?>",
                         "interval": "D",
                         "timezone": "Etc/UTC",
                         "theme": "Light",
@@ -235,7 +247,13 @@
             },
             {
             label: "Industry Average",
-            data: [28, 48, 40, 19, 96, 27, 43],
+            data: [<?php echo $industryWork ?>, 
+            <?php echo $industryProd ?>,
+            <?php echo $industryCust ?>,
+            <?php echo $industryLead ?>, 
+            <?php echo $industryComm ?>,
+            <?php echo $industryEnv ?>,
+            <?php echo $industryJobs ?>],
             backgroundColor: [
             'rgba(0, 250, 220, .2)',
             ],
@@ -247,8 +265,14 @@
             ]
             },
             options: {
-            responsive: true
+            responsive: true,
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    min: 0,
+                }
             }
+            },
             });
         </script>
     </body>
