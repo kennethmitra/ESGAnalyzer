@@ -1,38 +1,39 @@
-,0
-0,ERROR
-0,Amazon
-0,Visa
-0,Target
-0,Fluor
-0,Kellogg
-0,Albemarle
-0,Corning
-0,Cabot
-0,Graco
-0,Toro
-0,Centene
-0,Assured Guaranty
-0,Morningstar
-0,Iron Mountain
-0,Markel Corp
-0,Idexx Labs
-0,Trimble
-0,Sensata Technologies
-0,Coherent
-0,Steris Plc
-0,Heico Corp
-0,Univar
-0,Hubbell
-0,Reliance Steel & Alum
-0,Insulet Corp
-0,KAR Auction Services
-0,Athene Holding
-0,RPC Inc
-0,Loews
-0,Carter
-0,Gates Industrial Corp
-0,Apergy Corporation
-0,Colfax
-0,Chemed Corporation
-0,Middleby Corp
-0,Wabtec Corp
+Index,Company
+29,Amazon
+42,Visa
+52,Target
+55,Fluor
+79,Kellogg
+169,Albemarle
+193,Corning
+245,Cabot
+259,Keycorp
+283,Graco
+333,Toro
+355,Centene
+364,Assured Guaranty
+384,Morningstar
+389,Iron Mountain
+433,Markel Corp
+470,Idexx Labs
+476,Trimble
+500,Okta Inc
+519,Sensata Technologies
+567,Coherent
+570,Steris Plc
+659,Heico Corp
+661,Univar
+672,Hubbell
+736,Reliance Steel & Alum
+737,Insulet Corp
+742,KAR Auction Services
+757,Athene Holding
+758,RPC Inc
+769,Loews
+775,Carter
+776,Gates Industrial Corp
+788,Apergy Corporation
+812,Colfax
+813,Chemed Corporation
+845,Middleby Corp
+883,Wabtec Corp
