@@ -1,8 +1,5 @@
 import pandas as pd
 
-
-
-
 def get_altered_df (questionaire):
     size = 0
    
