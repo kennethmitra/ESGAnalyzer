@@ -160,16 +160,7 @@
   </div>
 </div>
 
-<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-    <div class="my-3 py-3">
-      <h2 class="display-5">Another headline</h2>
-      <p class="lead">And an even wittier subheading.</p>
-    </div>
-    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-  </div>
-  <div id="box2" class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <?php
+<?php
       $esgData = exec("python3 getESGStats.py " . $companyName);
       $esgDataArray = explode(",", $esgData);
       $companyName = $esgDataArray[0];
@@ -194,6 +185,51 @@
       $industryComm = round($esgDataArray[19]);
       $industryJobs = round($esgDataArray[20]);
     ?>
+
+<div id="box1" class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 py-3" style="color: black">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">ESG Scores</h6>
+        </div>
+        <div class="card-body">
+          <h4 class="small font-weight-bold">Customers <span class="float-right"><?php echo $companyCust ?></span></h4>
+          <div class="progress mb-4">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: <?php echo $companyCust ?>%" aria-valuenow="<?php echo $companyCust ?>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h4 class="small font-weight-bold">Products <span class="float-right"><?php echo $companyProd ?></span></h4>
+          <div class="progress mb-4">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $companyProd ?>%" aria-valuenow="<?php echo $companyCust ?>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h4 class="small font-weight-bold">Environment <span class="float-right"><?php echo $companyEnv ?></span></h4>
+          <div class="progress mb-4">
+            <div class="progress-bar" role="progressbar" style="width: <?php echo $companyEnv ?>%" aria-valuenow="<?php echo $companyEnv ?>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h4 class="small font-weight-bold">Jobs <span class="float-right"><?php echo $companyJobs ?></span></h4>
+          <div class="progress mb-4">
+            <div class="progress-bar" role="progressbar" style="width: <?php echo $companyJobs ?>%" aria-valuenow="<?php echo $companyJobs ?>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h4 class="small font-weight-bold">Communities<span class="float-right"><?php echo $companyComm ?></span></h4>
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $companyComm ?>%" aria-valuenow="<?php echo $companyComm ?>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h4 class="small font-weight-bold">Company Leadership and Shareholders<span class="float-right"><?php echo $companyLead ?></span></h4>
+          <div class="progress mb-4">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: <?php echo $companyLead ?>%" aria-valuenow="<?php echo $companyLead ?>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <h4 class="small font-weight-bold">Workers<span class="float-right"><?php echo $companyWork ?></span></h4>
+          <div class="progress mb-4">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: <?php echo $companyWork ?>%" aria-valuenow="<?php echo $companyWork ?>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <div id="box2" class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div id="chartBox">
       <canvas id="radarChart"></canvas>
     </div>
