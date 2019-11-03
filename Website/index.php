@@ -14,9 +14,6 @@
                 border: 1px solid gray;
                 background: rgba(255, 254, 254, 0.863);
             }
-            body {
-                background: rgba(234, 255, 248, 0.966);
-            }
             #search {
                 height: 10%;
                 width: 100%;
@@ -29,6 +26,31 @@
             .btn {
                 background: lightgray;
             }
+            body {
+            
+            background: linear-gradient(270deg, #0be40d, #12beac);
+            background-size: 400% 400%;
+
+            -webkit-animation: AnimationName 30s ease infinite;
+            -moz-animation: AnimationName 30s ease infinite;
+            animation: AnimationName 30s ease infinite;
+
+            @-webkit-keyframes AnimationName {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+            }
+            @-moz-keyframes AnimationName {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+            }
+            @keyframes AnimationName {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+            }
+          }
         </style>
     </head>
     <body>
@@ -36,7 +58,7 @@
             include("navbar.html");
         ?>
         <div class="heading">
-            <h1 style="font-size: 10em; text-align: center">[Company Name]</h1>
+            <h1 style="font-size: 10em; text-align: center">IntelliVest</h1>
         </div>
         <div class="container" id="search">
             <div class="input-group mb-3">

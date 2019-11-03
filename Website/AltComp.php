@@ -230,7 +230,7 @@
   </div>
 
   <div id="box2" class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-    <div id="chartBox">
+    <div id="chartBox" class="chart-container" style="position: relative; height:60vh; width:80vw; vertical-align:middle;margin-top:10%">
       <canvas id="radarChart"></canvas>
     </div>
   </div>
